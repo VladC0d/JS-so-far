@@ -1,0 +1,353 @@
+"use strict";
+/*
+function logger() {
+  console.log("My name is Cod");
+}
+logger();
+logger();
+logger();
+
+function fruitProcessor(apples, oranges) {
+  const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+  return juice;
+}
+const appleJuice = fruitProcessor(3, 5);
+console.log(appleJuice);
+// console.log(fruitProcessor(3, 5));
+const appleOrangeJuice = fruitProcessor(2, 4);
+console.log(appleOrangeJuice);
+
+//function declaration
+function calcAge1(birthyear) {
+  const age = 2037 - birthyear;
+  return age; // or return 2037-birthyear;
+}
+const age1 = calcAge1(2001);
+//function expression
+const calcAge2 = function (birthyear) {
+  return 2037 - birthyear;
+};
+const age2 = calcAge2(2001);
+console.log(age1, age2);
+
+
+//arrow function
+const calcAge3 = (birthyear) => 2037 - birthyear;
+const age3 = calcAge3(2001);
+console.log(age3);
+
+const yearsUntilRetirement = (birthyear, firstName) => {
+  const age = 2037 - birthyear;
+  const retirement = 65 - age;
+  //   return retirement;
+  return `${firstName} retires in ${retirement} years`;
+};
+console.log(yearsUntilRetirement(2001, "Jonas"));
+console.log(yearsUntilRetirement(1980, "Bob"));
+
+
+function cutFruitPieces(fruit) {
+  return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges) {
+  const applePieces = cutFruitPieces(apples);
+  const orangePieces = cutFruitPieces(oranges);
+
+  const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;
+  return juice;
+}
+console.log(fruitProcessor(2, 3));
+
+const calcAge = function (birthyear) {
+  return 2037 - birthyear;
+};
+
+const yearsUntilRetirement = function (birthyear, firstName) {
+  const age = calcAge(birthyear);
+  const retirement = 65 - age;
+  if (retirement > 0) {
+    console.log(`${firstName} retires in ${retirement} years`);
+    return retirement;
+  } else {
+    return "already retired";
+  }
+  return retirement;
+  //   return `${firstName} retires in ${retirement} years`;
+};
+
+console.log(yearsUntilRetirement(1991, "Jonas"));
+console.log(yearsUntilRetirement(1950, "Mike"));
+
+
+//Coding challenge
+//Test data 1
+//Dolphins score 44,23,71.Koalas score 65,54,49.
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+let avegDolphins = calcAverage(44, 23, 71);
+let avegKoalas = calcAverage(65, 54, 49);
+// const avegDolphins = calcAverage(85, 54, 41);
+// const avegKoalas = calcAverage(23, 34, 27);
+console.log(avegDolphins, avegKoalas);
+function checkWinner(avgDolphins, avgKoalas) {
+  if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`Dolphins wins(${avgDolphins} vs ${avgKoalas})`);
+  } else if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`Koalas wins(${avgKoalas} vs ${avgDolphins})`);
+  } else {
+    console.log("No team wins...");
+  }
+}
+checkWinner(avegDolphins, avegKoalas);
+checkWinner(456, 111);
+//Test data 2
+//Dolphins score 85,54,41.Koalas score 23,34,27.
+avegDolphins = calcAverage(85, 54, 41);
+avegKoalas = calcAverage(23, 34, 27);
+console.log(avegDolphins, avegKoalas);
+checkWinner(avegDolphins, avegKoalas);
+
+//ARRAYS
+const friend1 = "Michael";
+const friend2 = "Steven";
+const friend3 = "Peter";
+
+const friends = ["Michael", "Steven", "Peter"];
+console.log(friends);
+const years = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[2]);
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+friends[2] = "Jay";
+console.log(friends);
+
+const firstName = "Jonas";
+const jonas = [firstName, "Pastravanu", 2037 - 1991, "Teacher", friends];
+console.log(jonas);
+
+//Exercise
+let i;
+const calcAge = function (birthyear) {
+  return 2037 - birthyear;
+};
+const years = [1990, 1967, 2002, 2010, 2018];
+
+for (i = 0; i <= 4; i++) {
+  const abc = calcAge(years[i]);
+  console.log(abc);
+}
+
+//ADD ELEMENTS TO AN ARRAY
+const friends = ["Michael", "Steven", "Peter"];
+const newLength = friends.push("Jay");
+console.log(friends);
+console.log(newLength);
+
+friends.unshift("John");
+console.log(friends);
+//REMOVE ELEMENTS FROM AN ARRAY
+friends.pop(); //LAST
+const pooped = friends.pop();
+console.log(friends);
+console.log(pooped);
+friends.shift(); //FIRST
+console.log(friends);
+
+friends.push(23);
+console.log(friends.indexOf("Steven"));
+console.log(friends.includes("Steven"));
+console.log(friends.includes(23));
+if (friends.includes("Steven")) {
+  console.log("You have a friend called Peter");
+}
+
+
+//CODING CHALLENGE
+let tip = 0;
+let i;
+function calcTip(value) {
+  if (value > 50 && value < 300) {
+    tip = (15 * value) / 100;
+  } else {
+    tip = (20 * value) / 100;
+  }
+  return tip;
+}
+console.log(calcTip(100));
+const bills = [125, 555, 44];
+const tips = [];
+const total = [];
+for (i = 0; i < 3; i++) {
+  tips.push(calcTip(bills[i]));
+  total.push(bills[i] + tips[i]);
+}
+console.log(tips);
+console.log(total);
+
+
+//OBJECTS
+
+const jonasArray = [
+  "jonas",
+  "shrek",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+];
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Shrek",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+};
+console.log(jonas);
+console.log(jonas.lastName);
+const nameKey = "Name";
+console.log(jonas["first" + nameKey]);
+
+const interestedIn = prompt(
+  "What do u weant to know about Jonas? Choose betweeen firstName,lastName,age,job,and friends"
+);
+if (jonas[interestedIn]) {
+  console.log(jonas[interestedIn]);
+} else {
+  console.log(
+    "Wrong request!! What do u weant to know about Jonas? Choose betweeen firstName,lastName,age,job,and friends"
+  );
+}
+
+jonas.location = "portugal";
+jonas["twitter"] = "@jonasSHREK";
+console.log(jonas);
+
+//CHALLENGE
+//'Jonas has 3 friends and his best friends is called michael'
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Shrek",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+};
+
+console.log(
+  `${jonas.firstName} has ${jonas.friends.length} friends and his best friend is called ${jonas.friends[0]}`
+);
+
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Shrek",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicence: true,
+
+  // calcAge: function (birthYear) {
+  //   return 2037 - birthYear;
+  // },
+  // calcAge: function () {
+  //   // console.log(this);
+  //   return 2037 - this.birthYear;
+  // },
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+};
+console.log(jonas.calcAge());
+
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+
+let drive;
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Shrek",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicence: false,
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    } and he has ${this.hasDriversLicence ? "a" : "no"} driver's licence`;
+  },
+};
+jonas.calcAge();
+const abcd = jonas.getSummary();
+console.log(abcd);
+
+//CHALLENGE 3
+const mark = {
+  firstName: "Mark",
+  lastname: "Miller",
+  weight: 79,
+  height: 1.69,
+  calcBmi: function () {
+    this.bmi = this.weight / (this.height * this.height);
+    return this.bmi;
+  },
+};
+const john = {
+  firstName: "John",
+  lastname: "Smith",
+  weight: 92,
+  height: 1.95,
+  calcBmi: function () {
+    this.bmi = this.weight / (this.height * this.height);
+    return this.bmi;
+  },
+};
+mark.calcBmi();
+john.calcBmi();
+if (mark.bmi > john.bmi) {
+  console.log(
+    `${mark.firstName}'s BMI (${mark.bmi.toFixed(1)}) is higher than ${
+      john.firstName
+    }'s BMI (${john.bmi.toFixed(1)})!`
+  );
+} else if (mark.bmijohn.bmi) {
+  console.log(
+    `${john.firstName}'s BMI (${John.bmi.toFixed(1)}) is higher than ${
+      mark.firstName
+    }'s BMI (${Mark.bmi.toFixed(1)})!`
+  );
+}
+*/
+let tip;
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const total = [];
+function calcTip(value) {
+  if (value > 50 && value < 300) {
+    tip = (15 * value) / 100;
+  } else {
+    tip = (20 * value) / 100;
+  }
+  return tip;
+}
+for (let i = 0; i < bills.length; i++) {
+  tips.push(calcTip(bills[i]));
+  total.push(bills[i] + tips[i]);
+}
+console.log(bills, tips, total);
+
+function calcAverage(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
+}
+console.log(calcAverage(total));
+console.log(calcAverage(tips));
